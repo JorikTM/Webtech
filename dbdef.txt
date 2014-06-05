@@ -6,7 +6,7 @@ CREATE TABLE users (
 	voornaam		VARCHAR (50)		NOT NULL,
 	achternaam		VARCHAR (50)		NOT NULL,
 	geb_datum		DATE,
-	e-mail			VARCHAR (50)		NOT NULL,
+	mail			VARCHAR (50)		NOT NULL,
 	geslacht 		CHAR (1) 			CHECK(geslacht IN ('F', 'M')),
 	leeftijd_voorkeur VARCHAR(5),
 	pers_type		VARCHAR (4)			NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE likes(
 	);
 	
 CREATE TABLE heeft_geliked(
-	like			TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),
+	like			TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( like IN ( 0, 1 )  ),
 	nickname		VARCHAR(12)			NOT NULL,
 	liked_nickname	VARCHAR(12)			NOT NULL,
 	PRIMARY KEY(nickname, liked_nickname),
@@ -43,7 +43,7 @@ CREATE TABLE heeft_geliked(
 	);
 
 CREATE TABLE fotolijst(
-	prof_foto		TINYINT( 1 ) 		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),
+	prof_foto		TINYINT( 1 ) 		NOT NULL DEFAULT ( 0 ) CHECK ( prof_foto IN ( 0, 1 )  ),
 	foto_id			INTEGER				NOT NULL,
 	nickname		VARCHAR(12)			NOT NULL,
 	PRIMARY KEY( nickname, foto_id),
@@ -52,7 +52,7 @@ CREATE TABLE fotolijst(
 	);
 	
 CREATE TABLE merk_voorkeur(
-	voorkeur		TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),	
+	voorkeur		TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( voorkeur IN ( 0, 1 )  ),	
 	nickname		VARCHAR(12)			NOT NULL,
 	merk_id			INTEGER				NOT NULL,
 	PRIMARY KEY(nickname, merk_id),
