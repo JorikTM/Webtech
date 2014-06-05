@@ -1,11 +1,63 @@
 PRAGMA foreign_keys = ON;
 
-CREATE TABLE user (
-	user_id		INTEGER			NOT NULL,
+CREATE TABLE users (
 	nickname		VARCHAR (12)		NOT NULL,
 	password		VARCHAR (50)		NOT NULL,
-	naam			VARCHAR (50)		NOT NULL,
-	gb_datum		DATE	,
-	mail			VARCHAR (50)		NOT NULL,
-	geslacht 		CHAR (1) 		CHECK(geslacht IN ('F', 'M')),
-	voorkeur		CHAR (2) 		CHECK(voorkeur IN ('F', 'M', 'FM')),
+	voornaam		VARCHAR (50)		NOT NULL,
+	achternaam		VARCHAR (50)		NOT NULL,
+	geb_datum		DATE,
+	e-mail			VARCHAR (50)		NOT NULL,
+	geslacht 		CHAR (1) 			CHECK(geslacht IN ('F', 'M')),
+	leeftijd_voorkeur VARCHAR(5),
+	pers_type		VARCHAR (4)			NOT NULL,
+	pers_type_voorkeur VARCHAR(20),
+	beschrijving	VARCHAR(500),
+	PRIMARY KEY(nickname)
+	);
+
+CREATE TABLE merken (
+	merknaam		VARCHAR(50)			NOT NULL,
+	merk_id			INTEGER				NOT NULL,
+	PRIMARY KEY(merk_id)
+	);
+	
+CREATE TABLE fotos (
+	foto_link		VARCHAR(500)		NOT NULL,
+	foto_id			INTEGER				NOT NULL,
+	PRIMARY KEY(foto_id)
+	);
+	
+CREATE TABLE likes(
+	nickname		VARCHAR(12)			NOT NULL,
+	liked_nickname	VARCHAR(12)			NOT NULL,
+	PRIMARY KEY(nickname)
+	);
+	
+CREATE TABLE heeft_geliked(
+	like			TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),
+	nickname		VARCHAR(12)			NOT NULL,
+	liked_nickname	VARCHAR(12)			NOT NULL,
+	PRIMARY KEY(nickname, liked_nickname),
+	FOREIGN KEY(nickname) REFERENCES users(nickname),
+	FOREIGN KEY(liked_nickname) REFERENCES likes(liked_nickname)
+	);
+
+CREATE TABLE fotolijst(
+	prof_foto		TINYINT( 1 ) 		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),
+	foto_id			INTEGER				NOT NULL,
+	nickname		VARCHAR(12)			NOT NULL,
+	PRIMARY KEY( nickname, foto_id),
+	FOREIGN KEY( nickname ) REFERENCES users(nickname),
+	FOREIGN KEY( foto_id ) REFERENCES fotos(foto_id)
+	);
+	
+CREATE TABLE merk_voorkeur(
+	voorkeur		TINYINT( 1 )		NOT NULL DEFAULT ( 0 ) CHECK ( lidmaatschap IN ( 0, 1 )  ),	
+	nickname		VARCHAR(12)			NOT NULL,
+	merk_id			INTEGER				NOT NULL,
+	PRIMARY KEY(nickname, merk_id),
+	FOREIGN KEY(nickname) REFERENCES users(nickname),
+	FOREIGN KEY(merk_id) REFERENCES merken(merk_id)
+	);
+	
+	
