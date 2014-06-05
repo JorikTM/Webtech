@@ -1,0 +1,11 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE user (
+	user_id		INTEGER			NOT NULL,
+	nickname		VARCHAR (12)		NOT NULL,
+	password		VARCHAR (50)		NOT NULL,
+	naam			VARCHAR (50)		NOT NULL,
+	gb_datum		DATE	,
+	mail			VARCHAR (50)		NOT NULL,
+	geslacht 		CHAR (1) 		CHECK(geslacht IN ('F', 'M')),
+	voorkeur		CHAR (2) 		CHECK(voorkeur IN ('F', 'M', 'FM')),
