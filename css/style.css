@@ -117,10 +117,11 @@ html,body{
 	color: #FC0202;
 }
 
-input:required:invalid, input:focus:invalid, textarea:required:invalid{
+/* ---!! Werkt niet met PHP form? -> vereiste !!-- */
+/*input:required:invalid, input:focus:invalid, textarea:required:invalid{
 	border-color: red;
 	-moz-box-shadow: none;
-}
+}*/
 
 /*CSS voor registreerpagina*/
 #registreren{
