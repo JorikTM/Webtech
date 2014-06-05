@@ -5,7 +5,7 @@
 		</div>
 
 		<div id="shinypeople">
-			<img src="<?= base_url()?>img/happycouple.png">
+			<img src="<?= base_url();?>img/happycouple.png">
 			<div id="subtext">
 				"Wij vonden elkaar met DataDate!"
 			</div>

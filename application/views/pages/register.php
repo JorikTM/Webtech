@@ -5,15 +5,15 @@
 	<div id="registreren">
 		<form id="registreerformulier" name="register" action="" method="post">
 			<div class="persoonlijktekst">
-				Nickname: <input type="text name="nickname" required><br>
-				Volledige naam: <input type="text name="naam" required><br>
+				Nickname: <input type="text" name="nickname" required><br>
+				Volledige naam: <input type="text" name="naam" required><br>
 				E-mailadres: <input type="email" name="email" required><br>
 				Wachtwoord: <input type="password" name="wachtwoord" required><br>
 				Geslacht: 	<select>
 								<option value="M">Man</option>
 								<option value="F">Vrouw</option>
 							</select><br>
-				Geboortedatum: <input type="date" name="gebdatum" required><br>
+				Geboortedatum(YYYY-MM-DD): <input type="date" name="gebdatum" required><br>
 				Geslachtsvoorkeur: <select name="geslachtsvoorkeur">
 								<option value="man">Man</option>
 								<option value="vrouw">Vrouw</option>
