@@ -23,15 +23,13 @@ class Login extends CI_Controller {
         $this->load->library('form_validation');
         
         $this->form_validation->set_rules('nickname', 'Nickname', 'required');
-        $this->form_validation->set_rules('password', 'Wachtwoord', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
 
         if($this->form_validation->run()){
             redirect('pages/members');
         }
         else {
-            $this->load->view('pages/login');
+            $this->login();
         }
     }
-    
-    
 }

@@ -9,12 +9,12 @@
         echo form_input('nickname');
         echo "</p>";
         
-        echo "<p>Wachtwoord:";
+        echo "<p>Password:";
         echo form_password('password');
         echo "</p>";
         
         echo "<p>";
-        echo form_submit('login_submit', 'Inloggen');
+        echo form_submit('login_submit', 'Login');
         echo "</p>";
 
 		echo form_close();
