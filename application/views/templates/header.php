@@ -13,7 +13,7 @@
 			<ul>
 				<li><a href="<?= base_url()?>index.php">Home</a></li>
 				<li><a href="<?= base_url()?>index.php/about">Vind je match</a></li>
-				<li><a href="#">Inloggen</a></li>
-        			<li><a href="#">Registreren</a></li>
+				<li><a href="<?= base_url()?>index.php/login">Inloggen</a></li>
+        		<li><a href="<?= base_url()?>index.php/register">Registreren</a></li>
    			</ul>
 		</nav>
