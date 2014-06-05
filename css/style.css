@@ -91,3 +91,87 @@ html,body{
 #right{
 	float:right;
 }
+
+/*CSS voor persoonlijkheidstest*/
+#testinleiding{
+	text-align: center;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+
+.vraag{
+	margin-bottom: 0px;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+/*CSS voor loginpagina*/
+#login{
+	text-align: center;
+	margin: 4em;
+	font-size: 1em;
+}
+
+#login h2{
+	color: #FC0202;
+}
+
+input:required:invalid, input:focus:invalid, textarea:required:invalid{
+	border-color: red;
+	-moz-box-shadow: none;
+}
+
+/*CSS voor registreerpagina*/
+#registreren{
+	text-align: left;
+	margin-left: 6em;
+}
+
+.persoonlijktekst{
+	width: 250px;
+}
+
+#regtitel{
+	text-align: left;
+	margin-left: 6em;
+}
+
+#registreren input{
+	width: 100%;
+}
+
+#regtitel h2{
+	color: #FC0202;
+}
+
+#checkboxes{
+	width: 1250px;
+	text-align: left;
+}
+
+#checkboxes ul{
+		list-style-type: none;
+		display: inline-block;
+		float: left;
+		width: 150px;
+		text-align: left;
+}
+
+#checkboxes ul li input{
+	display: inline;
+	width: 30px;
+	padding-left: 0px;
+}
+
+#submitbutton{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#beschrijving{
+	height:3em;
+	width: 250px;
+	resize:none;
+	border-width:2px;
+}
