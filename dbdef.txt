@@ -8,9 +8,10 @@ CREATE TABLE users (
 	geb_datum		DATE,
 	mail			VARCHAR (50)		NOT NULL,
 	geslacht 		CHAR (1) 			CHECK(geslacht IN ('F', 'M')),
+	geslacht_voorkeur VARCHAR(2)		CHECK(geslacht_voorkeur IN ( 'F', 'M', 'MF')),
 	leeftijd_voorkeur VARCHAR(5),
-	pers_type		VARCHAR (4)			NOT NULL,
-	pers_type_voorkeur VARCHAR(20),
+	pers_type		VARCHAR (50)			NOT NULL,
+	pers_type_voorkeur VARCHAR(50),
 	beschrijving	VARCHAR(500),
 	PRIMARY KEY(nickname)
 	);
@@ -28,9 +29,8 @@ CREATE TABLE fotos (
 	);
 	
 CREATE TABLE likes(
-	nickname		VARCHAR(12)			NOT NULL,
 	liked_nickname	VARCHAR(12)			NOT NULL,
-	PRIMARY KEY(nickname)
+	PRIMARY KEY(liked_nickname)
 	);
 	
 CREATE TABLE heeft_geliked(
