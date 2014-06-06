@@ -8,28 +8,28 @@
         
         echo validation_errors();
         
-        echo "<div>Username:";
-        echo form_input('username', $this->input->post('username'));
+        echo "<div class=\"persoonlijktekst\">Username:";
+        echo form_input('username');
         echo "</div>";
         
-        echo "<div>Voornaam:";
-        echo form_input('voornaam', $this->input->post('voornaam'));
+        echo "<div class=\"persoonlijktekst\">Voornaam:";
+        echo form_input('voornaam');
         echo "</div>";
         
-        echo "<div>Achternaam:";
-        echo form_input('achternaam', $this->input->post('achternaam'));
+        echo "<div class=\"persoonlijktekst\">Achternaam:";
+        echo form_input('achternaam');
         echo "</div>";
         
-        echo "<div>Email:";
-        echo form_input('mail', $this->input->post('mail'));
+        echo "<div class=\"persoonlijktekst\">Email:";
+        echo form_input('mail');
         echo "</div>";        
         
-        echo "<div>Wachtwoord: ";
+        echo "<div class=\"persoonlijktekst\">Wachtwoord: ";
         echo form_password('password');
         echo "</div>";
         
-        echo "<div>Bevestig Wachtwoord: ";
-        echo form_password('cpassword');
+        echo "<div class=\"persoonlijktekst\">Bevestig Wachtwoord: ";
+        echo form_password('password');
         echo "</div>";
         
         $geslacht = array(
@@ -41,8 +41,8 @@
         echo form_dropdown('geslacht', $geslacht, 'male');
         echo "</div>";
         
-        echo "<div>Geboortedatum:";
-        echo form_input('date', $this->input->post('date'));
+        echo "<div class=\"persoonlijktekst\">Geboortedatum:";
+        echo form_input('date');
         echo "</div>";
         
         $geslachtvoorkeur = array(
@@ -68,209 +68,221 @@
         echo form_dropdown('leef_voorkeur', $leeftijdvoorkeur, 'geen');
         echo "</div>";
         
-        echo "<div>Beschrijving:";
-        echo form_textarea('beschrijving');
+		$data = array(	'name' => 'beschrijving',
+						'id' => 'beschrijving',
+						'maxlenght' => '500');
+		
+        echo "<div class=\"persoonlijktekst\">Beschrijving:";
+        echo form_textarea($data);
         echo "</div>";
         
         echo "<div> Merkvoorkeuren: </div>";
         
-        echo "<div>Coca-Cola";
+		echo "<div id=\"checkboxes\">";
+		
+        echo "<ul><li><div>";
         echo form_checkbox('Coca-Cola');
-        echo "</div>";
+        echo "Coca-Cola</div></li>";
         
-        echo "<div>Pepsi";
+        echo "<li><div>";
         echo form_checkbox('Pepsi');
-        echo "</div>";
+        echo "Pepsi</div></li>";
         
-        echo "<div>Nespresso";
+        echo "<li><div>";
         echo form_checkbox('Nespresso');
-        echo "</div>";
+        echo "Nespresso</div></li>";
         
-        echo "<div>Douwe-Egberts";
+        echo "<li><div>";
         echo form_checkbox('Douwe-Egberts');
-        echo "</div>";
+        echo "Douwe-Egberts</div></li>";
         
-        echo "<div>Starbucks";
+        echo "<li><div>";
         echo form_checkbox('Starbucks');
-        echo "</div>";
+        echo "Starbucks</div></li>";
         
-        echo "<div>Apple";
+        echo "<li><div>";
         echo form_checkbox('Apple');
-        echo "</div>";
+        echo "Apple</div></li>";
         
-        echo "<div>Microsoft";
+        echo "<li><div>";
         echo form_checkbox('Microsoft');
-        echo "</div>";
+        echo "Microsoft</div></li>";
         
-        echo "<div>Philips";
+        echo "<li><div>";
         echo form_checkbox('Philips');
-        echo "</div>";
+        echo "Philips</div></li>";
         
-        echo "<div>Samsung";
+        echo "<li><div>";
         echo form_checkbox('Samsung');
-        echo "</div>";
+        echo "Samsung</div></li>";
         
-        echo "<div>HTC";
+        echo "<li><div>";
         echo form_checkbox('HTC');
-        echo "</div>";
+        echo "HTC</div></li></ul>";
         
-        echo "<div>Sony";
+        echo "<ul><li><div>";
         echo form_checkbox('Sony');
-        echo "</div>";
+        echo "Sony</div></li>";
         
-        echo "<div>Honig";
+        echo "<li><div>";
         echo form_checkbox('Honig');
-        echo "</div>";
+        echo "Honig</div></li>";
         
-        echo "<div>Conimex";
+        echo "<li><div>";
         echo form_checkbox('Conimex');
-        echo "</div>";
+        echo "Conimex</div></li>";
         
-        echo "<div>McDonald's";
+        echo "<li><div>";
         echo form_checkbox('McDonalds');
-        echo "</div>";
+        echo "McDonald's</div></li>";
         
-        echo "<div>Burger King";
+        echo "<li><div>";
         echo form_checkbox('Burger King');
-        echo "</div>";
+        echo "Burger King</div></li>";
         
-        echo "<div>Subway";
+        echo "<li><div>";
         echo form_checkbox('Subway');
-        echo "</div>";
+        echo "Subway</div></li>";
         
-        echo "<div>Unox";
+        echo "<li><div>";
         echo form_checkbox('Unox');
-        echo "</div>";
+        echo "Unox</div></li>";
         
-        echo "<div>Nike";
+        echo "<li><div>";
         echo form_checkbox('Nike');
-        echo "</div>";
+        echo "Nike</div></li>";
         
-        echo "<div>Adidas";
+        echo "<li><div>";
         echo form_checkbox('Adidas');
-        echo "</div>";
+        echo "Adidas</div></li>";
         
-        echo "<div>Ray-Ban";
+        echo "<li><div>";
         echo form_checkbox('Ray-Ban');
-        echo "</div>";
+        echo "Ray-Ban</div></li></ul>";
         
-        echo "<div>G-Star";
+        echo "<ul><li><div>";
         echo form_checkbox('G-Star');
-        echo "</div>";
+        echo "G-Star</div></li>";
         
-        echo "<div>McGreggor";
+        echo "<li><div>";
         echo form_checkbox('McGreggor');
-        echo "</div>";
+        echo "McGreggor</div></li>";
         
-        echo "<div>Zeeman";
+        echo "<li><div>";
         echo form_checkbox('Zeeman');
-        echo "</div>";
+        echo "Zeeman</div></li>";
         
-        echo "<div>Hema";
+        echo "<li><div>";
         echo form_checkbox('Hema');
-        echo "</div>";
+        echo "Hema</div></li>";
         
-        echo "<div>Scotch &amp Soda";
+        echo "<li><div>";
         echo form_checkbox('ScotchSoda');
-        echo "</div>";
+        echo "Scotch &amp Soda</div></li>";
         
-        echo "<div>Lonsdale";
+        echo "<li><div>";
         echo form_checkbox('Lonsdale');
-        echo "</div>";
+        echo "Lonsdale</div></li>";
         
-        echo "<div>H&ampM";
+        echo "<li><div>";
         echo form_checkbox('HM');
-        echo "</div>";
+        echo "H&ampM</div></li>";
         
-        echo "<div>Elmex";
+		echo "<li><div>";
+		echo form_checkbox('ZARA');
+		echo "ZARA</div></li>";
+        
+        echo "<li><div>";
         echo form_checkbox('Elmex');
-        echo "</div>";
+        echo "Elmex</div></li>";
         
-        echo "<div>Colgate";
+        echo "<li><div>";
         echo form_checkbox('Colgate');
-        echo "</div>";
+        echo "Colgate</div></li></ul>";
         
-        echo "<div>Jumbo";
+        echo "<ul><li><div>";
         echo form_checkbox('Jumbo');
-        echo "</div>";
+        echo "Jumbo</div></li>";
         
-        echo "<div>Albert Heijn";
+        echo "<li><div>";
         echo form_checkbox('Albert Heijn');
-        echo "</div>";
+        echo "Albert Heijn</div></li>";
         
-        echo "<div>C1000";
+        echo "<li><div>";
         echo form_checkbox('C1000');
-        echo "</div>";
+        echo "C1000</div></li>";
         
-        echo "<div>BMW";
+        echo "<li><div>";
         echo form_checkbox('BMW');
-        echo "</div>";
+        echo "BMW</div></li>";
         
-        echo "<div>Audi";
+        echo "<li><div>";
         echo form_checkbox('Audi');
-        echo "</div>";
+        echo "Audi</div></li>";
         
-        echo "<div>Volkswagen";
+        echo "<li><div>";
         echo form_checkbox('Volkswagen');
-        echo "</div>";
+        echo "Volkswagen</div></li>";
         
-        echo "<div>Renault";
+        echo "<li><div>";
         echo form_checkbox('Renault');
-        echo "</div>";
+        echo "Renault</div></li>";
         
-        echo "<div>Ajax";
+        echo "<li><div>";
         echo form_checkbox('Ajax');
-        echo "</div>";
+        echo "Ajax</div></li>";
 
-        echo "<div>Feyenoord";
+        echo "<li><div>";
         echo form_checkbox('Feyenoord');
-        echo "</div>";
+        echo "Feyenoord</div></li>";
         
-        echo "<div>PSV";
+        echo "<li><div>";
         echo form_checkbox('PSV');
-        echo "</div>";
+        echo "PSV</div></li></ul>";
         
-        echo "<div>Kit Kat";
+        echo "<ul><li><div>";
         echo form_checkbox('Kit Kat');
-        echo "</div>";
+        echo "Kit Kat</div></li>";
         
-        echo "<div>Mars";
+        echo "<li><div>";
         echo form_checkbox('Mars');
-        echo "</div>";
+        echo "Mars</div></li>";
         
-        echo "<div>HBO";
+        echo "<li><div>";
         echo form_checkbox('HBO');
-        echo "</div>";
+        echo "HBO</div></li>";
         
-        echo "<div>RTL 4";
+        echo "<li><div>";
         echo form_checkbox('RTL 4');
-        echo "</div>";
+        echo "RTL 4</div></li>";
         
-        echo "<div>RTL 5";
+        echo "<li><div>";
         echo form_checkbox('RTL 5');
-        echo "</div>";
+        echo "RTL 5</div></li>";
         
-        echo "<div>Veronica";
+        echo "<li><div>";
         echo form_checkbox('Veronica');
-        echo "</div>";
+        echo "Veronica</div></li>";
         
-        echo "<div>Film 1";
+        echo "<li><div>";
         echo form_checkbox('Film 1');
-        echo "</div>";
+        echo "Film 1</div></li>";
         
-        echo "<div>Facebook";
+        echo "<li><div>";
         echo form_checkbox('Facebook');
-        echo "</div>";
+        echo "Facebook</div></li>";
         
-        echo "<div>Twitter";
+        echo "<li><div>";
         echo form_checkbox('Twitter');
-        echo "</div>";
+        echo "Twitter</div></li>";
         
-        echo "<div>Spotify";
+        echo "<li><div>";
         echo form_checkbox('Spotify');
-        echo "</div>";
+        echo "Spotify</div></li></ul>";
+		
+		echo "</div>";
 
-        echo "<div>";
+        echo "<div class=\"persoonlijktekst\" id=\"submitbutton\">";
         echo form_submit('register_submit', 'Maak de persoonlijkheidstest!');
         echo "</div>";
 

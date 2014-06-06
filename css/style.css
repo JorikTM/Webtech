@@ -169,8 +169,21 @@ form div{
 }
 
 #beschrijving{
-	height:3em;
+	height:5em;
 	width: 250px;
 	resize:none;
 	border-width:2px;
+}
+
+#testinleiding{
+	text-align: center;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+
+.vraag{
+	margin-bottom: 0px;
+	font-weight: bold;
+	font-size: 1em;
 }
