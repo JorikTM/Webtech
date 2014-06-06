@@ -48,4 +48,17 @@ class Login extends CI_Controller {
             return false;
         }
     }
+    
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('pages/home');
+    }
+    
+    public function restricted(){
+        $this->load->view('templates/header');
+        $this->load->view('pages/restricted');
+        $this->load->view('templates/footer');
+        
+    }
+    
 }

@@ -16,7 +16,11 @@ class Main extends CI_Controller {
     
     //Individual pages Controller methods
     public function members(){
-        $this->load->view('pages/members');
+        if($this->session->userdata('is_logged_in')){
+            $this->load->view('pages/members'); 
+        } else {
+            redirect('login/restricted');
+        }   
     }
     
     
