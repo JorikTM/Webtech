@@ -56,7 +56,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = '../CodeIgniter/system';
+	$system_path = './system';
 
 /*
  *---------------------------------------------------------------
@@ -72,7 +72,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = '../CodeIgniter/application';
+	$application_folder = './application';
 
 /*
  * --------------------------------------------------------------------
@@ -104,6 +104,7 @@ if (defined('ENVIRONMENT'))
 	// The controller function you wish to be called.
 	// $routing['function']	= '';
 
+	
 
 /*
  * -------------------------------------------------------------------

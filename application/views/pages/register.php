@@ -21,7 +21,7 @@
         echo "</div>";
         
         echo "<div class=\"persoonlijktekst\">Email:";
-        echo form_input('mail');
+        echo form_input('email');
         echo "</div>";        
         
         echo "<div class=\"persoonlijktekst\">Wachtwoord: ";
@@ -29,7 +29,7 @@
         echo "</div>";
         
         echo "<div class=\"persoonlijktekst\">Bevestig Wachtwoord: ";
-        echo form_password('password');
+        echo form_password('cpassword');
         echo "</div>";
         
         $geslacht = array(
@@ -58,10 +58,10 @@
         
         $leeftijdvoorkeur = array(
                   'geen' => 'Geen',
-                  'twintdert'  => '20-30',
-                  'dertveer' => '30-40',
-                  'veervijf' => '40-50',
-                  'vijfplus' => '50+'
+                  'twintigdertig'  => '20-30',
+                  'dertigveertig' => '30-40',
+                  'veertigvijftig' => '40-50',
+                  'vijftigplus' => '50+'
                 );
         
         echo "<div>Leeftijdsvoorkeur: ";
@@ -70,7 +70,7 @@
         
 		$data = array(	'name' => 'beschrijving',
 						'id' => 'beschrijving',
-						'maxlenght' => '500');
+						'maxlength' => '500');
 		
         echo "<div class=\"persoonlijktekst\">Beschrijving:";
         echo form_textarea($data);

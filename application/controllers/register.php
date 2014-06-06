@@ -26,7 +26,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[users.username]');
         $this->form_validation->set_rules('voornaam', 'Voornaam', 'required');
         $this->form_validation->set_rules('achternaam', 'Achternaam', 'required');
-        $this->form_validation->set_rules('mail', 'Email', 'required|trim|valid_email|is_unique[users.mail]');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Wachtwoord', 'required|trim');
         $this->form_validation->set_rules('cpassword', 'Bevestig Wachtwoord', 'required|trim|matches[password]');
         $this->form_validation->set_rules('geslacht', 'Geslacht', 'required');
@@ -107,7 +107,7 @@ class Register extends CI_Controller {
             'username' => $this->input->post('username'),
             'voornaam' => $this->input->post('voornaam'),
             'achternaam' => $this->input->post('achternaam'),
-            'mail' => $this->input->post('mail'),
+            'mail' => $this->input->post('email'),
             'password' => md5($this->input->post('password')),
             'geslacht' => $this->input->post('geslacht'),
             'geb_datum' => $this->age_from_date($this->input->post('date')),
@@ -116,9 +116,7 @@ class Register extends CI_Controller {
             'leeftijd_voorkeur' => $this->input->post('leef_voorkeur')
         );
         
-        $query = $this->db->insert('users', $data);
-        
-        if($query->num_rows()){
+        if($this->db->insert('users', $data)){
             return true;
         } else return false;
     }

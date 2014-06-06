@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/CodeIgniter';
+$config['base_url']	= 'http://students.science.uu.nl/~4101839/';
 
 /*
 |--------------------------------------------------------------------------

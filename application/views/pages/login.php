@@ -6,7 +6,7 @@
         echo validation_errors();
         
         echo "<div>Email:";
-        echo form_input('mail', $this->input->post('mail'));
+        echo form_input('email', $this->input->post('email'));
         echo "</div>";
         
         echo "<div>Password: ";
@@ -20,6 +20,6 @@
 		echo form_close();
 		
 		?>
-	<p>Heb je nog geen account?</br> <a href="<?= base_url();?>index.php/register">Registreren</a> is gratis!</p>
+	<p>Heb je nog geen account?</br> <a href="<?= base_url();?>register">Registreren</a> is gratis!</p>
 </div>
 
