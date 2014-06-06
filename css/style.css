@@ -152,11 +152,11 @@ html,body{
 }
 
 #checkboxes ul{
-		list-style-type: none;
-		display: inline-block;
-		float: left;
-		width: 150px;
-		text-align: left;
+    list-style-type: none;
+	display: inline-block;
+	float: left;
+	width: 150px;
+	text-align: left;
 }
 
 #checkboxes ul li input{
