@@ -5,17 +5,17 @@
         
         echo validation_errors();
         
-        echo "<p id=>Username:";
+        echo "<div>Username:";
         echo form_input('username');
-        echo "</p>";
+        echo "</div>";
         
-        echo "<p>Password:";
+        echo "<div>Password: ";
         echo form_password('password');
-        echo "</p>";
+        echo "</div>";
         
-        echo "<p>";
+        echo "<div>";
         echo form_submit('login_submit', 'Login');
-        echo "</p>";
+        echo "</div>";
 
 		echo form_close();
 		
