@@ -50,19 +50,19 @@ INSERT INTO merken(merk_id, merknaam) VALUES
 	(49, 'Twitter'),
 	(50, 'Spotify');
 	
-INSERT INTO users(nickname, voornaam, achternaam, geb_datum, geslacht, geslacht_voorkeur, pers_type, pers_type_voorkeur, leeftijd_voorkeur, password) VALUES
-	('JTM11', 'Jorik', 'ter Molen', 1994-04-08, 'M', 'F', 'I(80) N(70) T(60) J(55)', 'E(80) S(70) F(60) P(55)', '20-30', 'waterpolo'),
-	('lola12', 'Lotte', 'Laars', 1972-03-10, 'F', 'M', 'E(70) N(60) T(70) P(80)', 'I(70) S(60) F(70) J(80)', '30-40', 'help123'),
-	('Tjirp34', 'Tjeerd', 'Beeksma', 1983-07-05, 'M', 'MF', 'I(70) S(60) T(60) P(55)', 'E(70) N(60) F(60) J(55)', '20-30', 'tjeerdbeest'),
-	('CmOn23', 'Simon', 'van Olfband', 1992-06-20, 'M', 'M', 'E(70) N(60) F(60) J(55)', 'I(70) S(60) T(60) P(55)', '30-40', 'ala-benen'),
-	('CandyShine', 'Anna', 'Wassenburg', 1993-10-05, 'F', 'MF', 'I(55) N(70) F(55) J(70)', 'I(80) N(70) T(60) J(55)', '20-30', 'schapenzijnApen'),
-	('Daan123', 'Daan', 'Spatel', 1990-12-23, 'M', 'F', 'E(80) S(70) F(55) P(60)', 'I(80) N(70) T(55) J(60)', '30-40', 'vrouw'),
-	('JelmIsOp', 'Jelmer', 'Kant', 1995-10-03, 'M', 'F', 'E(55) S(50) T(55) P(60)', 'I(55) N(50) F(55) J(60)', '20-30', 'voetbal95'),
-	('keesbees', 'Kees', 'Klaaskvaak', 1982-01-01, 'M', 'MF', 'E(60) S(60) T(60) P(60)', 'I(60) N(60) F(60) J(60)', '30-40', 'jankooiman'),
-	('Marie34', 'Marielle', 'de Koe', 1983-02-05, 'F', 'M', 'I(60) N(60) F(60) J(60)', 'E(60) S(60) T(60) P(60)', '30-40', 'opacool'),
-	('Caroline11', 'Caroline', 'van Rijthoven', 1995-06-18, 'F', 'M', 'I(96) S(68) T(65) J(68)', 'E(96) N(68) F(65) P(68)', '20-30', 'brandweer');
+INSERT INTO users(username, voornaam, achternaam, geb_datum, geslacht, geslacht_voorkeur, pers_type, pers_type_voorkeur, leeftijd_voorkeur, password) VALUES
+	('JTM11', 'Jorik', 'ter Molen', 1994-04-08, 'M', 'F', 'I(80) N(70) T(60) J(55)', 'E(80) S(70) F(60) P(55)', '20-30', '7ea29d0e63b338f3010ac78ff44345e7'),
+	('lola12', 'Lotte', 'Laars', 1972-03-10, 'F', 'M', 'E(70) N(60) T(70) P(80)', 'I(70) S(60) F(70) J(80)', '30-40', 'b37bf08f6406331250efc380acf3996d'),
+	('Tjirp34', 'Tjeerd', 'Beeksma', 1983-07-05, 'M', 'MF', 'I(70) S(60) T(60) P(55)', 'E(70) N(60) F(60) J(55)', '20-30', 'd92d7ef40c090be45d8cfd40231f59ec'),
+	('CmOn23', 'Simon', 'van Olfband', 1992-06-20, 'M', 'M', 'E(70) N(60) F(60) J(55)', 'I(70) S(60) T(60) P(55)', '30-40', '54b99d030a327bf742f3a6fd9cf8ccfb'),
+	('CandyShine', 'Anna', 'Wassenburg', 1993-10-05, 'F', 'MF', 'I(55) N(70) F(55) J(70)', 'I(80) N(70) T(60) J(55)', '20-30', '7d3776698bb579feae7c74c55e78367a'),
+	('Daan123', 'Daan', 'Spatel', 1990-12-23, 'M', 'F', 'E(80) S(70) F(55) P(60)', 'I(80) N(70) T(55) J(60)', '30-40', '860c7e364cfb1c98d571b002df0739f6'),
+	('JelmIsOp', 'Jelmer', 'Kant', 1995-10-03, 'M', 'F', 'E(55) S(50) T(55) P(60)', 'I(55) N(50) F(55) J(60)', '20-30', '812c088c9141983ef8b4e7e48c4792cf'),
+	('keesbees', 'Kees', 'Klaaskvaak', 1982-01-01, 'M', 'MF', 'E(60) S(60) T(60) P(60)', 'I(60) N(60) F(60) J(60)', '30-40', '4884d642c4e0ed6d414f3d8357644719'),
+	('Marie34', 'Marielle', 'de Koe', 1983-02-05, 'F', 'M', 'I(60) N(60) F(60) J(60)', 'E(60) S(60) T(60) P(60)', '30-40', 'f93d596a53f3c3926927a8f1a6345206'),
+	('Caroline11', 'Caroline', 'van Rijthoven', 1995-06-18, 'F', 'M', 'I(96) S(68) T(65) J(68)', 'E(96) N(68) F(65) P(68)', '20-30', '18c9ba15787bca70ccd33fa8099af947');
 	
-INSERT INTO likes(liked_nickname) VALUES
+INSERT INTO likes(liked_username) VALUES
 	('JTM11'),
 	('lola12'),
 	('Tjirp34'),
@@ -74,7 +74,7 @@ INSERT INTO likes(liked_nickname) VALUES
 	('Marie34'),
 	('Caroline11');
 	
-INSERT INTO heeft_geliked(nickname, liked_nickname, like) VALUES
+INSERT INTO heeft_geliked(username, liked_username, like) VALUES
 	('JTM11','CandyShine', 1),
 	('CandyShine','JTM11', 1),
 	('Tjirp34', 'lola12', 1),
@@ -84,7 +84,7 @@ INSERT INTO fotos(foto_link, foto_id) VALUES
 	('#link1', 1),
 	('#link2', 2);
 
-INSERT INTO fotolijst(nickname, foto_id, prof_foto) VALUES
+INSERT INTO fotolijst(username, foto_id, prof_foto) VALUES
 	('JTM11', 1, 1),
 	('lola12', 2, 1),
 	('Tjirp34', 1, 1),
@@ -96,7 +96,7 @@ INSERT INTO fotolijst(nickname, foto_id, prof_foto) VALUES
 	('Marie34', 2, 1),
 	('Caroline11', 2, 1);
 	
-INSERT INTO merk_voorkeur(nickname, merk_id, voorkeur) VALUES
+INSERT INTO merk_voorkeur(username, merk_id, voorkeur) VALUES
 	('JTM11', 1, 1),
 	('JTM11', 6, 1),
 	('lola12', 8, 1),

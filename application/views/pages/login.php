@@ -5,8 +5,8 @@
         
         echo validation_errors();
         
-        echo "<p id=>Nickname:";
-        echo form_input('nickname');
+        echo "<p id=>Username:";
+        echo form_input('username');
         echo "</p>";
         
         echo "<p>Password:";
