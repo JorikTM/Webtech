@@ -6,9 +6,11 @@
         <form id="registreerformulier" name="register" action="" method="post">
             <div class="persoonlijktekst">
                 Nickname: <input type="text" name="nickname" required><br>
-                Volledige naam: <input type="text" name="naam" required><br>
+                Voornaam: <input type="text" name="voornaam" required><br>
+                Achternaam: <input type="text" name="achternaam" required><br>
                 E-mailadres: <input type="email" name="email" required><br>
                 Wachtwoord: <input type="password" name="wachtwoord" required><br>
+                Herhaal wachtwoord: <input type="password" name="hwachtwoord" required><br>
                 Geslacht:   <select>
                                 <option value="M">Man</option>
                                 <option value="F">Vrouw</option>
