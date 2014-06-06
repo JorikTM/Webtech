@@ -9,19 +9,19 @@
         echo validation_errors();
         
         echo "<div>Username:";
-        echo form_input('username');
+        echo form_input('username', $this->input->post('username'));
         echo "</div>";
         
         echo "<div>Voornaam:";
-        echo form_input('voornaam');
+        echo form_input('voornaam', $this->input->post('voornaam'));
         echo "</div>";
         
         echo "<div>Achternaam:";
-        echo form_input('achternaam');
+        echo form_input('achternaam', $this->input->post('achternaam'));
         echo "</div>";
         
         echo "<div>Email:";
-        echo form_input('mail');
+        echo form_input('mail', $this->input->post('mail'));
         echo "</div>";        
         
         echo "<div>Wachtwoord: ";
@@ -42,7 +42,7 @@
         echo "</div>";
         
         echo "<div>Geboortedatum:";
-        echo form_input('date');
+        echo form_input('date', $this->input->post('date'));
         echo "</div>";
         
         $geslachtvoorkeur = array(

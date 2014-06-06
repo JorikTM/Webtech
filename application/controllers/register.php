@@ -30,28 +30,37 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('password', 'Wachtwoord', 'required|trim');
         $this->form_validation->set_rules('cpassword', 'Bevestig Wachtwoord', 'required|trim|matches[password]');
         $this->form_validation->set_rules('geslacht', 'Geslacht', 'required');
-        $this->form_validation->set_rules('date', 'Geboortedatum', 'required|trim|callback_good_date|callback_good_age');
-        $this->form_validation->set_rules('ges_voorkeur', 'Geslachtsvoorkeur', 'required|trim');
+        $this->form_validation->set_rules('date', 'Geboortedatum', 'required|trim|callback_valid_date|callback_valid_age');
+        $this->form_validation->set_rules('ges_voorkeur', 'Geslachtsvoorkeur');
         $this->form_validation->set_rules('beschrijving', 'Beschrijving', 'trim');
-        $this->form_validation->set_rules('leef_voorkeur', 'Leeftijdsvoorkeur', 'required');
+        $this->form_validation->set_rules('leef_voorkeur', 'Leeftijdsvoorkeur');
         
         //Message als een bepaalde field niet correct is ingevuld
-        $this -> form_validation -> set_message('is_unique', 'Dit e-emailadres bestaat al');
-        $this -> form_validation -> set_message('alpha_dash_space', 'Dat is geen geldige naam');
-        $this -> form_validation -> set_message('valid_date', 'Dat is geen geldige datum');
-        $this -> form_validation -> set_message('valid_age', 'U bent niet ouder dan 18');
+        $this->form_validation->set_message('is_unique', 'Deze e-mailadres en/of username bestaan al');
+        $this->form_validation->set_message('valid_mail', 'Dit is geen geldig emailadres');
+        $this->form_validation->set_message('alpha_dash_space', 'Dat is geen geldige naam');
+        $this->form_validation->set_message('valid_date', 'Dat is geen geldige datum');
+        $this->form_validation->set_message('valid_age', 'U bent niet ouder dan 18');
         
         if($this->form_validation->run()){
-            echo " Trolololo";
+            if($this->add_user()){
+                $this->load->view('templates/header');
+                $this->load->view('pages/members');
+                $this->load->view('templates/footer');
+            } else {
+                $this->load->view('templates/header');
+                echo "There was an error registrating you, please try again";
+                $this->load->view('pages/register');
+                $this->load->view('templates/footer');
+            }
         } else {
-            echo "FOUT";
             $this->load->view('templates/header');
             $this->load->view('pages/register');
             $this->load->view('templates/footer');
         }
     }
     
-    //Check voor characters die buiten het normale alphabet vallen, zo ja return false.
+    //Check voor characters die buiten de regexp vallen zo ja return false
     function alpha_dash_space($str) {
         return (!preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
     }
@@ -91,6 +100,27 @@ class Register extends CI_Controller {
             return date('Y') - $y;
         } else {
         }
+    }
+    
+    public function add_user(){
+        $data = array(
+            'username' => $this->input->post('username'),
+            'voornaam' => $this->input->post('voornaam'),
+            'achternaam' => $this->input->post('achternaam'),
+            'mail' => $this->input->post('mail'),
+            'password' => md5($this->input->post('password')),
+            'geslacht' => $this->input->post('geslacht'),
+            'geb_datum' => $this->age_from_date($this->input->post('date')),
+            'geslacht_voorkeur' => $this->input->post('ges_voorkeur'),
+            'beschrijving' => $this->input->post('beschrijving'),
+            'leeftijd_voorkeur' => $this->input->post('leef_voorkeur')
+        );
+        
+        $query = $this->db->insert('users', $data);
+        
+        if($query->num_rows()){
+            return true;
+        } else return false;
     }
     
 }

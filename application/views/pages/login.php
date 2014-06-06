@@ -5,8 +5,8 @@
         
         echo validation_errors();
         
-        echo "<div>Username:";
-        echo form_input('username');
+        echo "<div>Email:";
+        echo form_input('mail', $this->input->post('mail'));
         echo "</div>";
         
         echo "<div>Password: ";

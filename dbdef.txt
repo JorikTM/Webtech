@@ -5,7 +5,7 @@ CREATE TABLE users (
 	password VARCHAR ( 50 ) NOT NULL,
 	voornaam VARCHAR ( 50 ) NOT NULL,
 	achternaam VARCHAR ( 50 ) NOT NULL,
-	geb_datum INTEGER,
+	geb_datum INTEGER NOT NULL,
 	mail VARCHAR ( 50 ) NOT NULL,
 	geslacht CHAR ( 1 ) CHECK ( geslacht IN ( 'F', 'M' ) ),
 	geslacht_voorkeur VARCHAR ( 2 ) CHECK ( geslacht_voorkeur IN ( 'F', 'M', 'MF' ) ),
