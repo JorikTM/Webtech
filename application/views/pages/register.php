@@ -13,7 +13,7 @@
 								<option value="M">Man</option>
 								<option value="F">Vrouw</option>
 							</select><br>
-				Geboortedatum: <input type="date" name="gebdatum" required><br>
+				Geboortedatum: <input type="text" name="gebdatum" required><br>
 				Geslachtsvoorkeur: <select name="geslachtsvoorkeur">
 								<option value="man">Man</option>
 								<option value="vrouw">Vrouw</option>
