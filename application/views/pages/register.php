@@ -29,7 +29,7 @@
         echo "</div>";
         
         echo "<div>Bevestig Wachtwoord: ";
-        echo form_password('password');
+        echo form_password('cpassword');
         echo "</div>";
         
         $geslacht = array(
